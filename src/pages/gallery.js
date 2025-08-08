@@ -1,30 +1,44 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// Import images from the 16 folders
+import img1 from '../images/1/1.jpg';
+import img2 from '../images/2/2.jpg';
+import img3 from '../images/3/3.jpg';
+import img4 from '../images/4/4.jpg';
+import img5 from '../images/5/5.jpg';
+import img6 from '../images/6/6.jpg';
+import img7 from '../images/7/7.jpg';
+import img8 from '../images/8/8.jpg';
+import img9 from '../images/9/9.jpg';
+import img10 from '../images/10/10.jpg';
+import img11 from '../images/11/11.jpg';
+import img12 from '../images/12/12.jpg';
+import img13 from '../images/13/13.jpg';
+import img14 from '../images/14/14.jpg';
+import img15 from '../images/15/15.jpg';
+import img16 from '../images/16/16.jpg';
+
 function Gallery() {
   const navigate = useNavigate();
 
-  const sampleImages = [
-    { id: 1, title: "Mountain Landscape", description: "Beautiful mountain scenery at sunset" },
-    { id: 2, title: "Ocean Waves", description: "Calming ocean waves on a sunny day" },
-    { id: 3, title: "City Skyline", description: "Modern city skyline at night" },
-    { id: 4, title: "Forest Path", description: "Peaceful forest trail in autumn" },
-    { id: 5, title: "Desert Dunes", description: "Golden sand dunes stretching to the horizon" },
-    { id: 6, title: "Waterfall", description: "Majestic waterfall in the wilderness" },
-    { id: 7, title: "Flower Garden", description: "Colorful flowers in full bloom" },
-    { id: 8, title: "Snowy Peak", description: "Snow-capped mountain peak" },
-    { id: 9, title: "Beach Sunset", description: "Romantic sunset at the beach" },
-    { id: 10, title: "Urban Street", description: "Busy city street with people" },
-    { id: 11, title: "Lake Reflection", description: "Perfect reflection in a calm lake" },
-    { id: 12, title: "Wildlife", description: "Animals in their natural habitat" },
-    { id: 13, title: "Architecture", description: "Modern architectural masterpiece" },
-    { id: 14, title: "Countryside", description: "Rolling hills and green pastures" },
-    { id: 15, title: "Crystal Cave", description: "Stunning crystal formations underground" },
-    { id: 16, title: "Aurora Borealis", description: "Northern lights dancing in the sky" },
-    { id: 17, title: "Tropical Island", description: "Paradise island with palm trees" },
-    { id: 18, title: "Vintage Car", description: "Classic automobile in perfect condition" },
-    { id: 19, title: "Art Gallery", description: "Contemporary art on display" },
-    { id: 20, title: "Space Nebula", description: "Colorful nebula in deep space" }
+  const images = [
+    { id: 1, title: "Image 1", description: "Beautiful image from folder 1", src: img1 },
+    { id: 2, title: "Image 2", description: "Beautiful image from folder 2", src: img2 },
+    { id: 3, title: "Image 3", description: "Beautiful image from folder 3", src: img3 },
+    { id: 4, title: "Image 4", description: "Beautiful image from folder 4", src: img4 },
+    { id: 5, title: "Image 5", description: "Beautiful image from folder 5", src: img5 },
+    { id: 6, title: "Image 6", description: "Beautiful image from folder 6", src: img6 },
+    { id: 7, title: "Image 7", description: "Beautiful image from folder 7", src: img7 },
+    { id: 8, title: "Image 8", description: "Beautiful image from folder 8", src: img8 },
+    { id: 9, title: "Image 9", description: "Beautiful image from folder 9", src: img9 },
+    { id: 10, title: "Image 10", description: "Beautiful image from folder 10", src: img10 },
+    { id: 11, title: "Image 11", description: "Beautiful image from folder 11", src: img11 },
+    { id: 12, title: "Image 12", description: "Beautiful image from folder 12", src: img12 },
+    { id: 13, title: "Image 13", description: "Beautiful image from folder 13", src: img13 },
+    { id: 14, title: "Image 14", description: "Beautiful image from folder 14", src: img14 },
+    { id: 15, title: "Image 15", description: "Beautiful image from folder 15", src: img15 },
+    { id: 16, title: "Image 16", description: "Beautiful image from folder 16", src: img16 }
   ];
 
   const handleImageClick = (image) => {
@@ -42,7 +56,7 @@ function Gallery() {
         maxWidth: '80%', 
         margin: '0 auto' 
       }}>
-        {sampleImages.map((image) => (
+        {images.map((image) => (
           <div 
             key={image.id}
             style={{ 
@@ -57,28 +71,40 @@ function Gallery() {
             }}
             onClick={() => handleImageClick(image)}
             onMouseEnter={(e) => {
-              e.target.style.transform = 'scale(1.02)';
-              e.target.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.15)';
+              // Only apply effect to the main container div
+              if (e.target === e.currentTarget) {
+                e.target.style.transform = 'scale(1.02)';
+                e.target.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.15)';
+              }
             }}
             onMouseLeave={(e) => {
-              e.target.style.transform = 'scale(1)';
-              e.target.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+              // Only apply effect to the main container div
+              if (e.target === e.currentTarget) {
+                e.target.style.transform = 'scale(1)';
+                e.target.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+              }
             }}
           >
             <div style={{
                width: '100%',
                height: '200px',
-               backgroundColor: '#e0e0e0',
                borderRadius: '8px',
                marginBottom: '15px',
+               overflow: 'hidden',
                display: 'flex',
                alignItems: 'center',
-               justifyContent: 'center',
-               fontSize: '48px',
-               color: '#666',
-               fontWeight: 'bold'
+               justifyContent: 'center'
              }}>
-              📷
+              <img 
+                src={image.src} 
+                alt={image.title}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  borderRadius: '8px'
+                }}
+              />
             </div>
             <h3 style={{ margin: '0 0 10px 0', color: '#333', fontSize: '18px' }}>
               {image.title}
