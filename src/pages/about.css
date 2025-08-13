@@ -84,7 +84,7 @@
   align-items: center;
   width: 120px;
   height: 60px;
-  background-color: #007bff;
+  background-color: #6c757d;
   color: white;
   border-radius: 8px;
   cursor: pointer;
@@ -92,13 +92,13 @@
   margin-top: auto;
   margin-bottom: 20px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
 }
 
 .scroll-down-btn:hover {
-  background-color: #0056b3;
+  background-color: #495057;
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
+  box-shadow: 0 6px 12px rgba(108, 117, 125, 0.4);
 }
 
 .scroll-down-btn span {
