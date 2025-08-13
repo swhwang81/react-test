@@ -12,6 +12,15 @@
   font-size: 2.5rem;
   margin-bottom: 20px;
   font-weight: bold;
+  text-align: left;
+}
+
+.about-title-en {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: left;
 }
 
 .about-description {
@@ -72,6 +81,10 @@
     font-size: 2rem;
   }
   
+  .about-title-en {
+    font-size: 1.8rem;
+  }
+  
 
   
   .about-team-list {
@@ -90,6 +103,10 @@
   
   .about-title {
     font-size: 1.8rem;
+  }
+  
+  .about-title-en {
+    font-size: 1.6rem;
   }
   
   .about-description {
