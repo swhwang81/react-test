@@ -21,7 +21,7 @@ const designers = [
   },
   {
     id: 2,
-    name: "이지은",
+    name: "박준호",
     specialty: "UI/UX 디자인",
     image: designer2,
     description: "사용자 경험을 중시하는 UI/UX 디자이너",
@@ -29,7 +29,7 @@ const designers = [
   },
   {
     id: 3,
-    name: "박준호",
+    name: "이지은",
     specialty: "그래픽 디자인",
     image: designer3,
     description: "창의적인 그래픽 디자인 솔루션",
@@ -45,7 +45,7 @@ const designers = [
   },
   {
     id: 5,
-    name: "정현우",
+    name: "정연우",
     specialty: "모바일 디자인",
     image: designer5,
     description: "모바일 플랫폼 최적화 디자인",
@@ -83,7 +83,7 @@ function Designer() {
               <p className="specialty">{designer.specialty}</p>
               <p className="description">{designer.description}</p>
               <Link 
-                to={`/image/${designer.works[0]}`} 
+                to={`/image/${designer.works[0]}?from=designer`} 
                 className="view-works-btn"
               >
                 작품 보기

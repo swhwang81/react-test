@@ -58,6 +58,9 @@ const designerInfo = {
 function ImageDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = window.location;
+  const urlParams = new URLSearchParams(location.search);
+  const fromDesigner = urlParams.get('from') === 'designer';
 
   // Define all images with their folder structure - each folder has 2 images
   const folderImages = {
@@ -156,10 +159,10 @@ function ImageDetail() {
     <main style={{ padding: '20px', maxWidth: '80%', margin: '0 auto', marginTop: '120px' }}>
       <div style={{ marginBottom: '30px' }}>
         <button 
-          onClick={() => navigate('/gallery')}
+          onClick={() => navigate(fromDesigner ? '/designer' : '/gallery')}
           style={{
             padding: '15px 30px',
-            backgroundColor: '#007bff',
+            backgroundColor: fromDesigner ? '#28a745' : '#007bff',
             color: 'white',
             border: 'none',
             borderRadius: '8px',
@@ -169,21 +172,21 @@ function ImageDetail() {
             display: 'flex',
             alignItems: 'center',
             gap: '10px',
-            boxShadow: '0 4px 8px rgba(0, 123, 255, 0.3)',
+            boxShadow: fromDesigner ? '0 4px 8px rgba(40, 167, 69, 0.3)' : '0 4px 8px rgba(0, 123, 255, 0.3)',
             transition: 'all 0.3s ease'
           }}
           onMouseEnter={(e) => {
-            e.target.style.backgroundColor = '#0056b3';
+            e.target.style.backgroundColor = fromDesigner ? '#218838' : '#0056b3';
             e.target.style.transform = 'translateY(-2px)';
-            e.target.style.boxShadow = '0 6px 12px rgba(0, 123, 255, 0.4)';
+            e.target.style.boxShadow = fromDesigner ? '0 6px 12px rgba(40, 167, 69, 0.4)' : '0 6px 12px rgba(0, 123, 255, 0.4)';
           }}
           onMouseLeave={(e) => {
-            e.target.style.backgroundColor = '#007bff';
+            e.target.style.backgroundColor = fromDesigner ? '#28a745' : '#007bff';
             e.target.style.transform = 'translateY(0)';
-            e.target.style.boxShadow = '0 4px 8px rgba(0, 123, 255, 0.3)';
+            e.target.style.boxShadow = fromDesigner ? '0 4px 8px rgba(40, 167, 69, 0.3)' : '0 4px 8px rgba(0, 123, 255, 0.3)';
           }}
         >
-          ← Back to Gallery
+          ← {fromDesigner ? 'Back to Designer' : 'Back to Gallery'}
         </button>
       </div>
 
@@ -231,27 +234,29 @@ function ImageDetail() {
             }}>
               {designerInfo[folderId].description}
             </p>
-            <button 
-              onClick={() => navigate('/designer')}
-              style={{
-                padding: '8px 16px',
-                backgroundColor: '#28a745',
-                color: 'white',
-                border: 'none',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                fontSize: '14px',
-                transition: 'all 0.3s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = '#218838';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = '#28a745';
-              }}
-            >
-              디자이너 페이지로
-            </button>
+            {!fromDesigner && (
+              <button 
+                onClick={() => navigate('/designer')}
+                style={{
+                  padding: '8px 16px',
+                  backgroundColor: '#28a745',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '5px',
+                  cursor: 'pointer',
+                  fontSize: '14px',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#218838';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = '#28a745';
+                }}
+              >
+                디자이너 페이지로
+              </button>
+            )}
           </div>
         )}
         
