@@ -38,6 +38,46 @@
   text-align: left;
 }
 
+.about-team-list {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-team-title {
+  color: #333;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.about-team-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-team-items li {
+  color: #007bff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+  text-align: left;
+}
+
+.about-team-items li:last-child {
+  border-bottom: none;
+}
+
+.about-team-description {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 section {
   margin-bottom: 100px;
 }
@@ -74,6 +114,18 @@ section:last-child {
     font-size: 1.8rem;
   }
   
+  .about-team-list {
+    padding: 20px;
+  }
+  
+  .about-team-title {
+    font-size: 1.3rem;
+  }
+  
+  .about-team-items li {
+    font-size: 1rem;
+  }
+  
 
   
 
@@ -98,6 +150,18 @@ section:last-child {
   
   .about-title-en {
     font-size: 1.6rem;
+  }
+  
+  .about-team-list {
+    padding: 15px;
+  }
+  
+  .about-team-title {
+    font-size: 1.2rem;
+  }
+  
+  .about-team-items li {
+    font-size: 0.95rem;
   }
   
   .about-description {

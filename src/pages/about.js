@@ -34,6 +34,22 @@ function About() {
       <section>
       <h1 className="about-title">졸업준비 위원회</h1>
       <h1 className="about-title-en">Preparatory Committee</h1>
+      <div className="about-description-container">
+        <div className="about-team-list">
+          <h3 className="about-team-title">팀 구성</h3>
+          <ul className="about-team-items">
+            <li>그래픽팀</li>
+            <li>웹설계팀</li>
+            <li>GUI팀</li>
+            <li>개발팀</li>
+            <li>홍보/운영팀</li>
+          </ul>
+        </div>
+        <div className="about-team-description">
+          <p className="about-description">졸업준비 위원회는 5개 팀으로 구성되어 각 분야의 전문성을 바탕으로 체계적인 졸업 전시회 준비를 담당합니다. 각 팀은 독립적으로 업무를 수행하면서도 유기적인 협력을 통해 완성도 높은 결과물을 만들어냅니다.</p>
+          <p className="about-description">The Preparatory Committee consists of 5 teams that are responsible for systematic preparation of the graduation exhibition based on expertise in each field. Each team works independently while creating high-quality results through organic collaboration.</p>
+        </div>
+      </div>
       </section>
     </main>
   );
