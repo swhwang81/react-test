@@ -1,9 +1,9 @@
 import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './pages/Home';
+import Home from './pages/home';
 import About from './pages/about';
 import Gallery from './pages/gallery';
 import Designer from './pages/designer';
-import ImageDetail from './pages/ImageDetail';
+import ImageDetail from './pages/imagedetail';
 import './App.css';
 
 function App() {
