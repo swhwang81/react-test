@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './gallery.css';
+import './project.css';
 
 // Import images from the 16 folders
 import img1 from '../images/1/1.jpg';
@@ -20,7 +20,7 @@ import img14 from '../images/14/14.jpg';
 import img15 from '../images/15/15.jpg';
 import img16 from '../images/16/16.jpg';
 
-function Gallery() {
+function Project() {
   const navigate = useNavigate();
 
   const images = [
@@ -47,27 +47,27 @@ function Gallery() {
   };
 
   return (
-    <main className="gallery-main">
-      <h1 className="gallery-title">Gallery</h1>
-      <p className="gallery-subtitle">Welcome to our gallery!</p>
-      <div className="gallery-grid">
+    <main className="project-main">
+      <h1 className="project-title">Project</h1>
+      <p className="project-subtitle">Welcome to our project gallery!</p>
+      <div className="project-grid">
         {images.map((image) => (
           <div 
             key={image.id}
-            className="gallery-item"
+            className="project-item"
             onClick={() => handleImageClick(image)}
           >
-            <div className="gallery-image-container">
+            <div className="project-image-container">
               <img 
                 src={image.src} 
                 alt={image.title}
-                className="gallery-image"
+                className="project-image"
               />
             </div>
-            <h3 className="gallery-item-title">
+            <h3 className="project-item-title">
               {image.title}
             </h3>
-            <p className="gallery-item-description">
+            <p className="project-item-description">
               {image.description}
             </p>
           </div>
@@ -77,4 +77,4 @@ function Gallery() {
   );
 }
 
-export default Gallery;
+export default Project;

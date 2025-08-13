@@ -59,9 +59,6 @@ const designerInfo = {
 function ImageDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const location = window.location;
-  const urlParams = new URLSearchParams(location.search);
-  const fromDesigner = urlParams.get('from') === 'designer';
 
   // Define all images with their folder structure - each folder has 2 images
   const folderImages = {
@@ -152,10 +149,10 @@ function ImageDetail() {
     <main className="imagedetail-main">
       <div className="imagedetail-back-button-container">
         <button 
-          onClick={() => navigate(fromDesigner ? '/designer' : '/gallery')}
-          className={`imagedetail-back-button ${fromDesigner ? 'designer' : 'gallery'}`}
+          onClick={() => navigate('/gallery')}
+          className="imagedetail-back-button gallery"
         >
-          ← {fromDesigner ? 'Back to Designer' : 'Back to Gallery'}
+          ← Back to Gallery
         </button>
       </div>
 
@@ -175,14 +172,12 @@ function ImageDetail() {
             <p className="imagedetail-designer-description">
               {designerInfo[folderId].description}
             </p>
-            {!fromDesigner && (
-              <button 
-                onClick={() => navigate('/designer')}
-                className="imagedetail-designer-button"
-              >
-                디자이너 페이지로
-              </button>
-            )}
+            <button 
+              onClick={() => navigate('/designer')}
+              className="imagedetail-designer-button"
+            >
+              디자이너 페이지로
+            </button>
           </div>
         )}
         

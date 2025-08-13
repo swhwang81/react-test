@@ -1,23 +1,28 @@
 import React from 'react';
+import './about.css';
 
 function About() {
   return (
-    <main>
-      <h1>About Us</h1>
-      <p>This is the About page of our website.</p>
-      <p>We are a creative team dedicated to building amazing web experiences.</p>
+    <main className="about-main">
+      <h1 className="about-title">About Us</h1>
+      <p className="about-description">This is the About page of our website.</p>
+      <p className="about-description">We are a creative team dedicated to building amazing web experiences.</p>
     
-       <br/>
-       <h1>Our Team</h1>
-       <dl>
-        <dt>Developer 1</dt>
-        <dd>Hello World! Developer 1, This is a description of Developer 1</dd>
-        <dt>Developer 2</dt>
-        <dd>Hello World! Developer 2, This is a description of Developer 2</dd>
-        <dt>Developer 3</dt>
-        <dd>Hello World! Developer 3, This is a description of Developer 3</dd>
-      
-       </dl>
+      <h1 className="about-team-title">Our Team</h1>
+      <div className="about-team-list">
+        <div className="about-team-item">
+          <h3 className="about-team-name">Developer 1</h3>
+          <p className="about-team-description">Hello World! Developer 1, This is a description of Developer 1</p>
+        </div>
+        <div className="about-team-item">
+          <h3 className="about-team-name">Developer 2</h3>
+          <p className="about-team-description">Hello World! Developer 2, This is a description of Developer 2</p>
+        </div>
+        <div className="about-team-item">
+          <h3 className="about-team-name">Developer 3</h3>
+          <p className="about-team-description">Hello World! Developer 3, This is a description of Developer 3</p>
+        </div>
+      </div>
     </main>
   );
 }
