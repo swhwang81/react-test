@@ -1,0 +1,51 @@
+/* Footer Styles */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column h3 {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.footer-column p {
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+/* Responsive design for footer */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .footer-column h3 {
+    font-size: 16px;
+  }
+  
+  .footer-column p {
+    font-size: 13px;
+  }
+}
