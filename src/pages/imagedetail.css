@@ -38,23 +38,12 @@
   transition: all 0.3s ease;
 }
 
-.imagedetail-back-button.designer {
-  background-color: #28a745;
-  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
-}
-
-.imagedetail-back-button.gallery {
+.imagedetail-back-button {
   background-color: #007bff;
   box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
 }
 
-.imagedetail-back-button.designer:hover {
-  background-color: #218838;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(40, 167, 69, 0.4);
-}
-
-.imagedetail-back-button.gallery:hover {
+.imagedetail-back-button:hover {
   background-color: #0056b3;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);

@@ -83,7 +83,7 @@ function Designer() {
               <p className="specialty">{designer.specialty}</p>
               <p className="description">{designer.description}</p>
               <Link 
-                to={`/image/${designer.works[0]}?from=designer`} 
+                to={`/image/${designer.works[0]}`} 
                 className="view-works-btn"
               >
                 작품 보기
