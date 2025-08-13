@@ -54,5 +54,8 @@ main{
 }
 
 .intro-text{
-font-size:40px;
+  font-size: 40px;
+  color: #007bff;
+  margin-bottom: 30px;
+  text-align: center;
 }
