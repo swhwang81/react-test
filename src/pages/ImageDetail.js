@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import './imagedetail.css';
 
 // Import all images from each folder
 import img1 from '../images/1/1.jpg';
@@ -135,19 +136,11 @@ function ImageDetail() {
 
   if (!currentFolderImages) {
     return (
-      <main style={{ padding: '20px', textAlign: 'center' }}>
+      <main className="imagedetail-error-main">
         <h1>Folder not found</h1>
         <button 
           onClick={() => navigate('/gallery')}
-          style={{
-            padding: '10px 20px',
-            backgroundColor: '#007bff',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            fontSize: '16px'
-          }}
+          className="imagedetail-error-button"
         >
           Back to Gallery
         </button>
@@ -156,103 +149,36 @@ function ImageDetail() {
   }
 
   return (
-    <main style={{ padding: '20px', maxWidth: '80%', margin: '0 auto', marginTop: '120px' }}>
-      <div style={{ marginBottom: '30px' }}>
+    <main className="imagedetail-main">
+      <div className="imagedetail-back-button-container">
         <button 
           onClick={() => navigate(fromDesigner ? '/designer' : '/gallery')}
-          style={{
-            padding: '15px 30px',
-            backgroundColor: fromDesigner ? '#28a745' : '#007bff',
-            color: 'white',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            fontSize: '18px',
-            fontWeight: 'bold',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '10px',
-            boxShadow: fromDesigner ? '0 4px 8px rgba(40, 167, 69, 0.3)' : '0 4px 8px rgba(0, 123, 255, 0.3)',
-            transition: 'all 0.3s ease'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.backgroundColor = fromDesigner ? '#218838' : '#0056b3';
-            e.target.style.transform = 'translateY(-2px)';
-            e.target.style.boxShadow = fromDesigner ? '0 6px 12px rgba(40, 167, 69, 0.4)' : '0 6px 12px rgba(0, 123, 255, 0.4)';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.backgroundColor = fromDesigner ? '#28a745' : '#007bff';
-            e.target.style.transform = 'translateY(0)';
-            e.target.style.boxShadow = fromDesigner ? '0 4px 8px rgba(40, 167, 69, 0.3)' : '0 4px 8px rgba(0, 123, 255, 0.3)';
-          }}
+          className={`imagedetail-back-button ${fromDesigner ? 'designer' : 'gallery'}`}
         >
           ← {fromDesigner ? 'Back to Designer' : 'Back to Gallery'}
         </button>
       </div>
 
-      <div style={{
-        borderRadius: '12px',
-        padding: '30px'
-      }}>
-        <h1 style={{ 
-          textAlign: 'center', 
-          marginBottom: '30px', 
-          color: '#333',
-          fontSize: '32px'
-        }}>
+      <div className="imagedetail-content">
+        <h1 className="imagedetail-title">
           Folder {folderId} Images
         </h1>
         
         {designerInfo[folderId] && (
-          <div style={{
-            textAlign: 'center',
-            marginBottom: '30px',
-            padding: '20px',
-            backgroundColor: '#f8f9fa',
-            borderRadius: '10px',
-            border: '1px solid #e9ecef'
-          }}>
-            <h3 style={{ 
-              margin: '0 0 10px 0', 
-              color: '#007bff',
-              fontSize: '20px'
-            }}>
+          <div className="imagedetail-designer-info">
+            <h3 className="imagedetail-designer-name">
               디자이너: {designerInfo[folderId].name}
             </h3>
-            <p style={{ 
-              margin: '0 0 10px 0', 
-              color: '#666',
-              fontSize: '16px',
-              fontWeight: '500'
-            }}>
+            <p className="imagedetail-designer-specialty">
               전문분야: {designerInfo[folderId].specialty}
             </p>
-            <p style={{ 
-              margin: '0 0 15px 0', 
-              color: '#666',
-              fontSize: '14px'
-            }}>
+            <p className="imagedetail-designer-description">
               {designerInfo[folderId].description}
             </p>
             {!fromDesigner && (
               <button 
                 onClick={() => navigate('/designer')}
-                style={{
-                  padding: '8px 16px',
-                  backgroundColor: '#28a745',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '5px',
-                  cursor: 'pointer',
-                  fontSize: '14px',
-                  transition: 'all 0.3s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#218838';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#28a745';
-                }}
+                className="imagedetail-designer-button"
               >
                 디자이너 페이지로
               </button>
@@ -260,79 +186,35 @@ function ImageDetail() {
           </div>
         )}
         
-        <p style={{ 
-          textAlign: 'center', 
-          marginBottom: '40px', 
-          color: '#666',
-          fontSize: '18px'
-        }}>
+        <p className="imagedetail-subtitle">
           All images from folder {folderId}
         </p>
 
         {/* All Images from the selected folder */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '40px'
-        }}>
+        <div className="imagedetail-images-container">
           {currentFolderImages.map((img, index) => (
-            <div key={img.id} style={{
-              borderRadius: '12px',
-              padding: '20px',
-              backgroundColor: '#f8f9fa',
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-              border: '1px solid #e9ecef',
-              transition: 'all 0.3s ease'
-            }}>
-              <div style={{
-                width: '100%',
-                height: '60vh',
-                borderRadius: '8px',
-                marginBottom: '20px',
-                overflow: 'hidden',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
+            <div key={img.id} className="imagedetail-image-card">
+              <div className="imagedetail-image-container">
                 <img 
                   src={img.src} 
                   alt={img.title}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    borderRadius: '8px'
-                  }}
+                  className="imagedetail-image"
                 />
               </div>
 
-              <h2 style={{ 
-                margin: '0 0 15px 0', 
-                color: '#333', 
-                fontSize: '24px',
-                textAlign: 'center'
-              }}>
+              <h2 className="imagedetail-image-title">
                 {img.title}
               </h2>
 
-              <p style={{ 
-                margin: '0 0 15px 0', 
-                color: '#666', 
-                fontSize: '16px',
-                lineHeight: '1.6',
-                textAlign: 'center'
-              }}>
+              <p className="imagedetail-image-description">
                 {img.description}
               </p>
 
-              <div style={{
-                textAlign: 'center',
-                padding: '15px'
-              }}>
-                <p style={{ margin: '0', color: '#999', fontSize: '14px' }}>
+              <div className="imagedetail-image-meta">
+                <p className="imagedetail-image-id">
                   Image ID: {img.id}
                 </p>
-                <p style={{ margin: '5px 0 0 0', color: '#999', fontSize: '14px' }}>
+                <p className="imagedetail-folder-info">
                   Folder: {folderId}
                 </p>
               </div>

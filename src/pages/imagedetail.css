@@ -1,0 +1,232 @@
+.imagedetail-main {
+  padding: 20px;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top: 120px;
+}
+
+.imagedetail-error-main {
+  padding: 20px;
+  text-align: center;
+}
+
+.imagedetail-error-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.imagedetail-back-button-container {
+  margin-bottom: 30px;
+}
+
+.imagedetail-back-button {
+  padding: 15px 30px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.imagedetail-back-button.designer {
+  background-color: #28a745;
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.imagedetail-back-button.gallery {
+  background-color: #007bff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.imagedetail-back-button.designer:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(40, 167, 69, 0.4);
+}
+
+.imagedetail-back-button.gallery:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
+}
+
+.imagedetail-content {
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.imagedetail-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 32px;
+}
+
+.imagedetail-designer-info {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+.imagedetail-designer-name {
+  margin: 0 0 10px 0;
+  color: #007bff;
+  font-size: 20px;
+}
+
+.imagedetail-designer-specialty {
+  margin: 0 0 10px 0;
+  color: #666;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.imagedetail-designer-description {
+  margin: 0 0 15px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.imagedetail-designer-button {
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.imagedetail-designer-button:hover {
+  background-color: #218838;
+}
+
+.imagedetail-subtitle {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #666;
+  font-size: 18px;
+}
+
+.imagedetail-images-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.imagedetail-image-card {
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.imagedetail-image-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.imagedetail-image-container {
+  width: 100%;
+  height: 60vh;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagedetail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.imagedetail-image-title {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+}
+
+.imagedetail-image-description {
+  margin: 0 0 15px 0;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.imagedetail-image-meta {
+  text-align: center;
+  padding: 15px;
+}
+
+.imagedetail-image-id {
+  margin: 0;
+  color: #999;
+  font-size: 14px;
+}
+
+.imagedetail-folder-info {
+  margin: 5px 0 0 0;
+  color: #999;
+  font-size: 14px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .imagedetail-main {
+    max-width: 95%;
+    margin-top: 100px;
+  }
+  
+  .imagedetail-title {
+    font-size: 28px;
+  }
+  
+  .imagedetail-image-container {
+    height: 40vh;
+  }
+  
+  .imagedetail-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imagedetail-main {
+    padding: 15px;
+  }
+  
+  .imagedetail-title {
+    font-size: 24px;
+  }
+  
+  .imagedetail-back-button {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+  
+  .imagedetail-image-container {
+    height: 30vh;
+  }
+}
