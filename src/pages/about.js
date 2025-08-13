@@ -36,7 +36,6 @@ function About() {
       <h1 className="about-title-en">Preparatory Committee</h1>
       <div className="about-description-container">
         <div className="about-team-list">
-          <h3 className="about-team-title">팀 구성</h3>
           <ul className="about-team-items">
             <li>그래픽팀</li>
             <li>웹설계팀</li>
