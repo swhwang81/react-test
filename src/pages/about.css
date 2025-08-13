@@ -21,12 +21,7 @@
   margin-bottom: 30px;
 }
 
-.about-team-title {
-  color: #333;
-  font-size: 2rem;
-  margin: 40px 0 30px 0;
-  font-weight: bold;
-}
+
 
 .about-team-list {
   text-align: left;
@@ -77,9 +72,7 @@
     font-size: 2rem;
   }
   
-  .about-team-title {
-    font-size: 1.8rem;
-  }
+
   
   .about-team-list {
     padding: 20px;
@@ -103,9 +96,7 @@
     font-size: 1rem;
   }
   
-  .about-team-title {
-    font-size: 1.5rem;
-  }
+
   
   .about-team-name {
     font-size: 1.1rem;
