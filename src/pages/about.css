@@ -23,11 +23,18 @@
   text-align: left;
 }
 
+.about-description-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
 .about-description {
   color: #666;
   font-size: 1.2rem;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin: 0;
 }
 
 section {
@@ -89,6 +96,11 @@ section:last-child {
     margin-bottom: 80px;
   }
   
+  .about-description-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
   .about-title {
     font-size: 2rem;
   }
@@ -115,6 +127,10 @@ section:last-child {
   
   section {
     margin-bottom: 60px;
+  }
+  
+  .about-description-container {
+    gap: 15px;
   }
   
   .about-title {
