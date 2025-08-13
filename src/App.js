@@ -24,7 +24,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/designer" element={<Designer />} />
+                      <Route path="/designer" element={<Designer />} />
           <Route path="/image/:id" element={<ImageDetail />} />
         </Routes>
       </div>

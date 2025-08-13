@@ -1,5 +1,4 @@
 import React from 'react';
-import backgroundGif from '../images/intro/intro.gif';
 import welcome from '../images/15/couple.jpg';
 
 function Home() {
@@ -7,7 +6,7 @@ function Home() {
     <main >
        
         <div style={{marginTop:'10vh'}}>
-          <img src={welcome}/>
+          <img src={welcome} alt="Welcome" />
         </div>
         <div className='intro-text'>
         <h1>Welcome to my Web Test</h1>
