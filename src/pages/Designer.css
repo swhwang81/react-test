@@ -1,0 +1,150 @@
+.designer-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.designer-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 40px 0;
+}
+
+.designer-header h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.designer-header p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.designer-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.designer-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.designer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.designer-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.designer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.designer-card:hover .designer-image img {
+  transform: scale(1.05);
+}
+
+.designer-info {
+  padding: 25px;
+}
+
+.designer-info h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.specialty {
+  color: #007bff;
+  font-weight: 500;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.view-works-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.view-works-btn:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  text-decoration: none;
+  color: white;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .designer-page {
+    padding: 15px;
+  }
+  
+  .designer-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .designer-header p {
+    font-size: 1rem;
+  }
+  
+  .designer-gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .designer-info {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .designer-header h1 {
+    font-size: 2rem;
+  }
+  
+  .designer-image {
+    height: 250px;
+  }
+  
+  .designer-info h3 {
+    font-size: 1.3rem;
+  }
+}

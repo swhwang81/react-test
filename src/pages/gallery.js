@@ -53,7 +53,7 @@ function Gallery() {
         display: 'grid', 
         gridTemplateColumns: 'repeat(4, 1fr)', 
         gap: '20px', 
-        maxWidth: '80%', 
+        maxWidth: '90%', 
         margin: '0 auto' 
       }}>
         {images.map((image) => (

@@ -1,6 +1,26 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
+// 디자이너 정보
+const designerInfo = {
+  1: { name: "김민수", specialty: "웹 디자인", description: "모던하고 미니멀한 웹 디자인 전문가" },
+  2: { name: "김민수", specialty: "웹 디자인", description: "모던하고 미니멀한 웹 디자인 전문가" },
+  3: { name: "김민수", specialty: "웹 디자인", description: "모던하고 미니멀한 웹 디자인 전문가" },
+  4: { name: "이지은", specialty: "UI/UX 디자인", description: "사용자 경험을 중시하는 UI/UX 디자이너" },
+  5: { name: "이지은", specialty: "UI/UX 디자인", description: "사용자 경험을 중시하는 UI/UX 디자이너" },
+  6: { name: "이지은", specialty: "UI/UX 디자인", description: "사용자 경험을 중시하는 UI/UX 디자이너" },
+  7: { name: "박준호", specialty: "그래픽 디자인", description: "창의적인 그래픽 디자인 솔루션" },
+  8: { name: "박준호", specialty: "그래픽 디자인", description: "창의적인 그래픽 디자인 솔루션" },
+  9: { name: "박준호", specialty: "그래픽 디자인", description: "창의적인 그래픽 디자인 솔루션" },
+  10: { name: "최유진", specialty: "브랜딩 디자인", description: "브랜드 아이덴티티 구축 전문가" },
+  11: { name: "최유진", specialty: "브랜딩 디자인", description: "브랜드 아이덴티티 구축 전문가" },
+  12: { name: "최유진", specialty: "브랜딩 디자인", description: "브랜드 아이덴티티 구축 전문가" },
+  13: { name: "정현우", specialty: "모바일 디자인", description: "모바일 플랫폼 최적화 디자인" },
+  14: { name: "정현우", specialty: "모바일 디자인", description: "모바일 플랫폼 최적화 디자인" },
+  15: { name: "정현우", specialty: "모바일 디자인", description: "모바일 플랫폼 최적화 디자인" },
+  16: { name: "한소영", specialty: "일러스트레이션", description: "독창적인 일러스트레이션 작가" }
+};
+
 // Import all images from each folder
 import img1 from '../images/1/1.jpg';
 import img1_1 from '../images/1/1-1.jpg';
@@ -179,6 +199,61 @@ function ImageDetail() {
         }}>
           Folder {folderId} Images
         </h1>
+        
+        {designerInfo[folderId] && (
+          <div style={{
+            textAlign: 'center',
+            marginBottom: '30px',
+            padding: '20px',
+            backgroundColor: '#f8f9fa',
+            borderRadius: '10px',
+            border: '1px solid #e9ecef'
+          }}>
+            <h3 style={{ 
+              margin: '0 0 10px 0', 
+              color: '#007bff',
+              fontSize: '20px'
+            }}>
+              디자이너: {designerInfo[folderId].name}
+            </h3>
+            <p style={{ 
+              margin: '0 0 10px 0', 
+              color: '#666',
+              fontSize: '16px',
+              fontWeight: '500'
+            }}>
+              전문분야: {designerInfo[folderId].specialty}
+            </p>
+            <p style={{ 
+              margin: '0 0 15px 0', 
+              color: '#666',
+              fontSize: '14px'
+            }}>
+              {designerInfo[folderId].description}
+            </p>
+            <button 
+              onClick={() => navigate('/designer')}
+              style={{
+                padding: '8px 16px',
+                backgroundColor: '#28a745',
+                color: 'white',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                fontSize: '14px',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#218838';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = '#28a745';
+              }}
+            >
+              디자이너 페이지로
+            </button>
+          </div>
+        )}
         
         <p style={{ 
           textAlign: 'center', 
