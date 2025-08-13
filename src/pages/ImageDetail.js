@@ -136,23 +136,34 @@ function ImageDetail() {
       <main className="imagedetail-error-main">
         <h1>Folder not found</h1>
         <button 
-          onClick={() => navigate('/gallery')}
+          onClick={() => navigate('/project')}
           className="imagedetail-error-button"
         >
-          Back to Gallery
+          Back to Project
         </button>
       </main>
     );
   }
 
+  // Determine which page to go back to based on image ID
+  const getBackToPage = () => {
+    if (folderId <= 10) {
+      return '/project';
+    } else {
+      return '/degree-project';
+    }
+  };
+
+  const backToPage = getBackToPage();
+
   return (
     <main className="imagedetail-main">
       <div className="imagedetail-back-button-container">
         <button 
-          onClick={() => navigate('/gallery')}
-          className="imagedetail-back-button gallery"
+          onClick={() => navigate(backToPage)}
+          className="imagedetail-back-button project"
         >
-          ← Back to Gallery
+          ← Back to {folderId <= 10 ? 'Project' : 'Degree Project'}
         </button>
       </div>
 

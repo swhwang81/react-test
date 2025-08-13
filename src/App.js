@@ -4,6 +4,7 @@ import About from './pages/about';
 import Project from './pages/project';
 import DegreeProject from './pages/degree-project';
 import Designer from './pages/designer';
+import DesignerDetail from './pages/designer-detail';
 import ImageDetail from './pages/imagedetail';
 import Footer from './components/Footer';
 import './App.css';
@@ -28,6 +29,7 @@ function App() {
                   <Route path="/project" element={<Project />} />
                   <Route path="/degree-project" element={<DegreeProject />} />
                   <Route path="/designer" element={<Designer />} />
+                  <Route path="/designer/:id" element={<DesignerDetail />} />
                   <Route path="/image/:id" element={<ImageDetail />} />
                 </Routes>
                 <Footer />
