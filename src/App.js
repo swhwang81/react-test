@@ -2,7 +2,7 @@ import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/about';
 import Gallery from './pages/gallery';
-import Designer from './pages/Designer';
+import Designer from './pages/designer';
 import ImageDetail from './pages/ImageDetail';
 import './App.css';
 
