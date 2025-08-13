@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './gallery.css';
 
 // Import images from the 16 folders
 import img1 from '../images/1/1.jpg';
@@ -46,70 +47,27 @@ function Gallery() {
   };
 
   return (
-    <main style={{ padding: '20px' }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '30px', color: '#333' }}>Gallery</h1>
-      <p style={{ textAlign: 'center', marginBottom: '40px', color: '#666' }}>Welcome to our gallery!</p>
-      <div style={{ 
-        display: 'grid', 
-        gridTemplateColumns: 'repeat(4, 1fr)', 
-        gap: '20px', 
-        maxWidth: '90%', 
-        margin: '0 auto' 
-      }}>
+    <main className="gallery-main">
+      <h1 className="gallery-title">Gallery</h1>
+      <p className="gallery-subtitle">Welcome to our gallery!</p>
+      <div className="gallery-grid">
         {images.map((image) => (
           <div 
             key={image.id}
-            style={{ 
-              backgroundColor: '#f8f9fa', 
-              padding: '20px', 
-              borderRadius: '12px', 
-              textAlign: 'center',
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-              border: '1px solid #e9ecef',
-              cursor: 'pointer',
-              transition: 'transform 0.2s ease, box-shadow 0.2s ease'
-            }}
+            className="gallery-item"
             onClick={() => handleImageClick(image)}
-            onMouseEnter={(e) => {
-              // Only apply effect to the main container div
-              if (e.target === e.currentTarget) {
-                e.target.style.transform = 'scale(1.02)';
-                e.target.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.15)';
-              }
-            }}
-            onMouseLeave={(e) => {
-              // Only apply effect to the main container div
-              if (e.target === e.currentTarget) {
-                e.target.style.transform = 'scale(1)';
-                e.target.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-              }
-            }}
           >
-            <div style={{
-               width: '100%',
-               height: '200px',
-               borderRadius: '8px',
-               marginBottom: '15px',
-               overflow: 'hidden',
-               display: 'flex',
-               alignItems: 'center',
-               justifyContent: 'center'
-             }}>
+            <div className="gallery-image-container">
               <img 
                 src={image.src} 
                 alt={image.title}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  borderRadius: '8px'
-                }}
+                className="gallery-image"
               />
             </div>
-            <h3 style={{ margin: '0 0 10px 0', color: '#333', fontSize: '18px' }}>
+            <h3 className="gallery-item-title">
               {image.title}
             </h3>
-            <p style={{ margin: '0', color: '#666', fontSize: '14px' }}>
+            <p className="gallery-item-description">
               {image.description}
             </p>
           </div>
