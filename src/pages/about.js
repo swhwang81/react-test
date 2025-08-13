@@ -34,20 +34,6 @@ function About() {
       <section>
       <h1 className="about-title">졸업준비 위원회</h1>
       <h1 className="about-title-en">Preparatory Committee</h1>
-      <div className="about-team-list">
-        <div className="about-team-item">
-          <h3 className="about-team-name">Developer 1</h3>
-          <p className="about-team-description">Hello World! Developer 1, This is a description of Developer 1</p>
-        </div>
-        <div className="about-team-item">
-          <h3 className="about-team-name">Developer 2</h3>
-          <p className="about-team-description">Hello World! Developer 2, This is a description of Developer 2</p>
-        </div>
-        <div className="about-team-item">
-          <h3 className="about-team-name">Developer 3</h3>
-          <p className="about-team-description">Hello World! Developer 3, This is a description of Developer 3</p>
-        </div>
-      </div>
       </section>
     </main>
   );

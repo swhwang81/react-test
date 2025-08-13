@@ -48,43 +48,7 @@ section:last-child {
 
 
 
-.about-team-list {
-  text-align: left;
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #f8f9fa;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-.about-team-item {
-  margin-bottom: 25px;
-  padding: 20px;
-  background-color: white;
-  border-radius: 8px;
-  border-left: 4px solid #007bff;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.about-team-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.about-team-name {
-  color: #007bff;
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.about-team-description {
-  color: #555;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin: 0;
-}
 
 /* 반응형 디자인 */
 @media (max-width: 768px) {
@@ -112,13 +76,7 @@ section:last-child {
   
 
   
-  .about-team-list {
-    padding: 20px;
-  }
-  
-  .about-team-item {
-    padding: 15px;
-  }
+
 }
 
 @media (max-width: 480px) {
@@ -148,7 +106,5 @@ section:last-child {
   
 
   
-  .about-team-name {
-    font-size: 1.1rem;
-  }
+
 }
