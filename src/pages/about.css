@@ -30,6 +30,14 @@
   margin-bottom: 30px;
 }
 
+section {
+  margin-bottom: 100px;
+}
+
+section:last-child {
+  margin-bottom: 0;
+}
+
 
 
 .about-team-list {
@@ -77,6 +85,10 @@
     margin-top: 80px;
   }
   
+  section {
+    margin-bottom: 80px;
+  }
+  
   .about-title {
     font-size: 2rem;
   }
@@ -99,6 +111,10 @@
 @media (max-width: 480px) {
   .about-main {
     padding: 20px 10px;
+  }
+  
+  section {
+    margin-bottom: 60px;
   }
   
   .about-title {
