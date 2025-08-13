@@ -1,15 +1,16 @@
 .home-main {
-  margin-top: 100px;
+  margin-top: 50px;
   text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-  height: calc(100vh - 100px);
+  height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/15/couple.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,15 +21,13 @@
 .intro-text {
   font-size: 40px;
   color: #ffffff;
-  margin-bottom: 30px;
   text-align: center;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-  position: relative;
-  z-index: 10;
-  background-color: rgba(0, 0, 0, 0.3);
   padding: 20px 30px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   backdrop-filter: blur(5px);
+  z-index: 10;
 }
 
 .intro-text h1 {
