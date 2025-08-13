@@ -22,20 +22,27 @@
   color: #ffffff;
   margin-bottom: 30px;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
   position: relative;
-  z-index: 2;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px 30px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
 }
 
 .intro-text h1 {
   margin: 0 0 15px 0;
   font-weight: bold;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
 .intro-text p {
   margin: 0;
   font-size: 24px;
-  color: #666;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 /* 반응형 디자인 */
