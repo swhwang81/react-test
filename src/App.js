@@ -2,6 +2,7 @@ import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/home';
 import About from './pages/about';
 import Project from './pages/project';
+import DegreeProject from './pages/degree-project';
 import Designer from './pages/designer';
 import ImageDetail from './pages/imagedetail';
 import Footer from './components/Footer';
@@ -25,6 +26,7 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/project" element={<Project />} />
+                  <Route path="/degree-project" element={<DegreeProject />} />
                   <Route path="/designer" element={<Designer />} />
                   <Route path="/image/:id" element={<ImageDetail />} />
                 </Routes>

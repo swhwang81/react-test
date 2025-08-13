@@ -1,8 +1,8 @@
-.project-main {
+.degree-project-main {
   padding: 20px;
 }
 
-.project-navigation {
+.degree-project-navigation {
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -10,7 +10,7 @@
   margin-top: 20px;
 }
 
-.project-nav-btn {
+.degree-project-nav-btn {
   background-color: #007bff;
   color: white;
   border: none;
@@ -28,32 +28,32 @@
   gap: 5px;
 }
 
-.project-nav-btn:hover {
+.degree-project-nav-btn:hover {
   background-color: #0056b3;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
 }
 
-.project-nav-btn.active {
+.degree-project-nav-btn.active {
   background-color: #28a745;
 }
 
-.project-nav-btn.active:hover {
+.degree-project-nav-btn.active:hover {
   background-color: #218838;
 }
 
-.project-nav-korean {
+.degree-project-nav-korean {
   font-size: 14px;
   font-weight: 600;
 }
 
-.project-nav-english {
+.degree-project-nav-english {
   font-size: 11px;
   font-weight: 400;
   opacity: 0.9;
 }
 
-.project-title {
+.degree-project-title {
   text-align: left;
   margin-bottom: 10px;
   color: #333;
@@ -62,7 +62,7 @@
   margin-right: auto;
 }
 
-.project-title-en {
+.degree-project-title-en {
   text-align: left;
   margin-bottom: 30px;
   color: #666;
@@ -73,7 +73,7 @@
   margin-right: auto;
 }
 
-.project-description {
+.degree-project-description {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
@@ -84,7 +84,7 @@
   margin-right: auto;
 }
 
-.project-description p {
+.degree-project-description p {
   color: #666;
   line-height: 1.6;
   margin: 0;
@@ -92,7 +92,7 @@
 
 
 
-.project-grid {
+.degree-project-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
@@ -100,7 +100,7 @@
   margin: 0 auto;
 }
 
-.project-item {
+.degree-project-item {
   background-color: #f8f9fa;
   padding: 20px;
   border-radius: 12px;
@@ -111,12 +111,12 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.project-item:hover {
+.degree-project-item:hover {
   transform: scale(1.02);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.project-image-container {
+.degree-project-image-container {
   width: 100%;
   height: 200px;
   border-radius: 8px;
@@ -127,20 +127,20 @@
   justify-content: center;
 }
 
-.project-image {
+.degree-project-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
 }
 
-.project-item-title {
+.degree-project-item-title {
   margin: 0 0 10px 0;
   color: #333;
   font-size: 18px;
 }
 
-.project-item-description {
+.degree-project-item-description {
   margin: 0;
   color: #666;
   font-size: 14px;
@@ -148,55 +148,55 @@
 
 /* 반응형 디자인 */
 @media (max-width: 1200px) {
-  .project-grid {
+  .degree-project-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 900px) {
-  .project-grid {
+  .degree-project-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .project-navigation {
+  .degree-project-navigation {
     flex-direction: column;
     gap: 20px;
     margin-bottom: 30px;
   }
 
-  .project-nav-btn {
+  .degree-project-nav-btn {
     width: 100%;
     max-width: 300px;
     padding: 12px 20px;
   }
 
-  .project-nav-korean {
+  .degree-project-nav-korean {
     font-size: 13px;
   }
 
-  .project-nav-english {
+  .degree-project-nav-english {
     font-size: 10px;
   }
 
-  .project-description {
+  .degree-project-description {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
 
 
-  .project-grid {
+  .degree-project-grid {
     grid-template-columns: 1fr;
     max-width: 95%;
   }
-  
-  .project-main {
+
+  .degree-project-main {
     padding: 15px;
   }
-  
-  .project-title {
+
+  .degree-project-title {
     font-size: 24px;
   }
 }
