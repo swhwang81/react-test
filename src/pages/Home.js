@@ -5,12 +5,10 @@ function Home() {
   return (
     <main className="home-main">
       <div className="intro-text-left">
-        <h1>인제대학교</h1>
-        <p>멀티미디어 학부</p>
-      </div>
-      <div className="intro-text-right">
-        <h1>Inje University</h1>
-        <p>Multimedia Department</p>
+        <h3>INJE University</h3>
+        <h3>Division of Multimedia Design</h3>
+        <h3>Digital Contents</h3>
+        <h3>2025 Graduation Exhibition</h3>
       </div>
       <div className="intro-text-center">
         <h2>This is Test!</h2>
