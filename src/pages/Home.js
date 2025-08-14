@@ -12,7 +12,9 @@ function Home() {
         <h1>Inje University</h1>
         <p>Multimedia Department</p>
       </div>
-      
+      <div className="intro-text-center">
+        <h2>This is Test!</h2>
+      </div>
     </main>
   );
 }
