@@ -63,36 +63,48 @@ const designers = [
 
 function Designer() {
   return (
-    <div className="designer-page">
-      <div className="designer-header">
-        <h1>Our Designers</h1>
-        <p>창의적인 아이디어로 세상을 더 아름답게 만드는 디자이너들을 만나보세요</p>
-      </div>
-      
-      <div className="designer-gallery">
-        {designers.map((designer) => (
-          <div key={designer.id} className="designer-card">
-            <div className="designer-image">
-              <img 
-                src={designer.image} 
-                alt={designer.name}
-              />
+    <>
+      <nav>
+        <div className="nav-left">
+          <Link to="/" className="nav-item">UNFOLD THE FLOW</Link>
+        </div>
+        <div className="nav-right">
+          <Link to="/about">ABOUT</Link>
+          <Link to="/project">PROJECT</Link>
+          <Link to="/designer" className="active">DESIGNER</Link>
+        </div>
+      </nav>
+      <div className="designer-page">
+        <div className="designer-header">
+          <h1>Our Designers</h1>
+          <p>창의적인 아이디어로 세상을 더 아름답게 만드는 디자이너들을 만나보세요</p>
+        </div>
+        
+        <div className="designer-gallery">
+          {designers.map((designer) => (
+            <div key={designer.id} className="designer-card">
+              <div className="designer-image">
+                <img 
+                  src={designer.image} 
+                  alt={designer.name}
+                />
+              </div>
+              <div className="designer-info">
+                <h3>{designer.name}</h3>
+                <p className="specialty">{designer.specialty}</p>
+                <p className="description">{designer.description}</p>
+                <Link 
+                  to={`/designer/${designer.id}`} 
+                  className="view-works-btn"
+                >
+                  상세 보기
+                </Link>
+              </div>
             </div>
-            <div className="designer-info">
-              <h3>{designer.name}</h3>
-              <p className="specialty">{designer.specialty}</p>
-              <p className="description">{designer.description}</p>
-              <Link 
-                to={`/designer/${designer.id}`} 
-                className="view-works-btn"
-              >
-                상세 보기
-              </Link>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

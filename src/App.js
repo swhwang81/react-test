@@ -26,26 +26,6 @@ function App() {
     <Router>
       <div className="App">
         <ScrollToTop />
-        <nav>
-          <div className="nav-left">
-            <Link to="/" className="nav-item">Home</Link>
-          </div>
-          <div className="nav-right">
-            <Link to="/about" onClick={closeMenu}>ABOUT</Link>
-            <Link to="/project" onClick={closeMenu}>PROJECT</Link>
-            <Link to="/designer" onClick={closeMenu}>DESIGNER</Link>
-          </div>
-          <div className="hamburger-menu" onClick={toggleMenu}>
-            <div className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></div>
-            <div className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></div>
-            <div className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></div>
-          </div>
-        </nav>
-        <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
-          <Link to="/about" onClick={closeMenu}>ABOUT</Link>
-          <Link to="/project" onClick={closeMenu}>PROJECT</Link>
-          <Link to="/designer" onClick={closeMenu}>DESIGNER</Link>
-        </div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

@@ -17,11 +17,11 @@
 }
 
 .about-nav-btn {
-  background-color: #007bff;
-  color: white;
+  background-color: #c1d8f5;
+  color: #000;
   border: none;
   padding: 15px 20px;
-  border-radius: 15px;
+  border-radius: 50px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
@@ -35,17 +35,18 @@
 }
 
 .about-nav-btn:hover {
-  background-color: #0056b3;
+  background-color: #a8c7f0;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 4px 8px rgba(193, 216, 245, 0.3);
 }
 
 .about-nav-btn.active {
-  background-color: #28a745;
+  background-color: #1500ff;
+  color: #fff;
 }
 
 .about-nav-btn.active:hover {
-  background-color: #218838;
+  background-color: #1200e6;
 }
 
 .about-nav-korean {

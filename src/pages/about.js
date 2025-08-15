@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './about.css';
 
 function About() {
@@ -65,26 +66,38 @@ function About() {
   const currentSection = sections.find(section => section.id === activeSection);
 
   return (
-    <main className="about-main">
-      <div className="about-navigation">
-        {sections.map((section) => (
-          <button
-            key={section.id}
-            className={`about-nav-btn ${activeSection === section.id ? 'active' : ''}`}
-            onClick={() => setActiveSection(section.id)}
-          >
-            <span className="about-nav-korean" dangerouslySetInnerHTML={{ __html: section.korean }}></span>
-            <span className="about-nav-english" dangerouslySetInnerHTML={{ __html: section.english }}></span>
-          </button>
-        ))}
-      </div>
-      
-      <section className="about-content">
-        <h1 className="about-title">{currentSection.korean}</h1>
-        <h1 className="about-title-en">{currentSection.english}</h1>
-        {currentSection.content}
-      </section>
-    </main>
+    <>
+      <nav>
+        <div className="nav-left">
+          <Link to="/" className="nav-item">UNFOLD THE FLOW</Link>
+        </div>
+        <div className="nav-right">
+          <Link to="/about" className="active">ABOUT</Link>
+          <Link to="/project">PROJECT</Link>
+          <Link to="/designer">DESIGNER</Link>
+        </div>
+      </nav>
+      <main className="about-main">
+        <div className="about-navigation">
+          {sections.map((section) => (
+            <button
+              key={section.id}
+              className={`about-nav-btn ${activeSection === section.id ? 'active' : ''}`}
+              onClick={() => setActiveSection(section.id)}
+            >
+              <span className="about-nav-korean" dangerouslySetInnerHTML={{ __html: section.korean }}></span>
+              <span className="about-nav-english" dangerouslySetInnerHTML={{ __html: section.english }}></span>
+            </button>
+          ))}
+        </div>
+        
+        <section className="about-content">
+          <h1 className="about-title">{currentSection.korean}</h1>
+          <h1 className="about-title-en">{currentSection.english}</h1>
+          {currentSection.content}
+        </section>
+      </main>
+    </>
   );
 }
 

@@ -39,10 +39,27 @@ nav a {
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
-  color: #ddd;
+  background-color: #ffd700;
+  color: #1500ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+}
+
+nav a.active {
+  background-color: #ffd700;
+  color: #1500ff;
+}
+
+nav a.active:hover {
+  background-color: #ffed4e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
 }
 
 /* 햄버거 메뉴 */

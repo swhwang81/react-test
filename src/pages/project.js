@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './project.css';
 
 // Import images from the 16 folders
@@ -35,53 +35,65 @@ function Project() {
   };
 
   return (
-    <main className="project-main">
-      <div className="project-navigation">
-        <button className="project-nav-btn active">
-          <span className="project-nav-korean">디지털콘텐츠스튜디오</span>
-          <span className="project-nav-english">Digital Contents Studio</span>
-        </button>
-        <button
-          className="project-nav-btn"
-          onClick={() => navigate('/degree-project')}
-        >
-          <span className="project-nav-korean">DC 졸업연구</span>
-          <span className="project-nav-english">Degree Project in DC Design</span>
-        </button>
-      </div>
-      <article className="project-article">
-        <h1 className="project-title">디지털컨텐츠스튜디오</h1>
-        <h2 className="project-title-en">Digital Contents Studio</h2>
-        <div className="project-description">
-          <p>디지털콘텐츠스튜디오는 창의적이고 혁신적인 디지털 콘텐츠 제작을 위한 실험적 공간입니다. 웹 디자인, 모바일 개발, 게임 디자인, 영상 제작 등 다양한 분야의 프로젝트를 통해 학생들의 실무 능력을 향상시키고 있습니다.</p>
-          <p>The Digital Contents Studio is an experimental space for creating creative and innovative digital content. We enhance students' practical skills through various projects in web design, mobile development, game design, and video production.</p>
+    <>
+      <nav>
+        <div className="nav-left">
+          <Link to="/" className="nav-item">UNFOLD THE FLOW</Link>
         </div>
-        <div className="project-grid">
-          {images.map((image) => (
-            <div
-              key={image.id}
-              className="project-item"
-              onClick={() => handleImageClick(image)}
-            >
-              <div className="project-image-container">
-                <img
-                  src={image.src}
-                  alt={image.title}
-                  className="project-image"
-                />
+        <div className="nav-right">
+          <Link to="/about">ABOUT</Link>
+          <Link to="/project" className="active">PROJECT</Link>
+          <Link to="/designer">DESIGNER</Link>
+        </div>
+      </nav>
+      <main className="project-main">
+        <div className="project-navigation">
+          <button className="project-nav-btn active">
+            <span className="project-nav-korean">디지털콘텐츠스튜디오</span>
+            <span className="project-nav-english">Digital Contents Studio</span>
+          </button>
+          <button
+            className="project-nav-btn"
+            onClick={() => navigate('/degree-project')}
+          >
+            <span className="project-nav-korean">DC 졸업연구</span>
+            <span className="project-nav-english">Degree Project in DC Design</span>
+          </button>
+        </div>
+        <article className="project-article">
+          <h1 className="project-title">디지털컨텐츠스튜디오</h1>
+          <h2 className="project-title-en">Digital Contents Studio</h2>
+          <div className="project-description">
+            <p>디지털콘텐츠스튜디오는 창의적이고 혁신적인 디지털 콘텐츠 제작을 위한 실험적 공간입니다. 웹 디자인, 모바일 개발, 게임 디자인, 영상 제작 등 다양한 분야의 프로젝트를 통해 학생들의 실무 능력을 향상시키고 있습니다.</p>
+            <p>The Digital Contents Studio is an experimental space for creating creative and innovative digital content. We enhance students' practical skills through various projects in web design, mobile development, game design, and video production.</p>
+          </div>
+          <div className="project-grid">
+            {images.map((image) => (
+              <div
+                key={image.id}
+                className="project-item"
+                onClick={() => handleImageClick(image)}
+              >
+                <div className="project-image-container">
+                  <img
+                    src={image.src}
+                    alt={image.title}
+                    className="project-image"
+                  />
+                </div>
+                <h3 className="project-item-title">
+                  {image.title}
+                </h3>
+                <p className="project-item-description">
+                  {image.description}
+                </p>
               </div>
-              <h3 className="project-item-title">
-                {image.title}
-              </h3>
-              <p className="project-item-description">
-                {image.description}
-              </p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-      </article>
-    </main>
+        </article>
+      </main>
+    </>
   );
 }
 
