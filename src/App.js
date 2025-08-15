@@ -1,5 +1,4 @@
-import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { useState } from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
 import About from './pages/about';
 import Project from './pages/project';
@@ -12,15 +11,6 @@ import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
 
   return (
     <Router>

@@ -9,8 +9,6 @@
   position: relative;
 }
 
-
-
 .intro-text-left {
   position: absolute;
   top: 20px;
@@ -60,10 +58,6 @@
   text-align: center;
 }
 
-
-
-
-
 /* 반응형 디자인 */
 @media (max-width: 768px) {
   .home-main {
@@ -73,9 +67,7 @@
     left: 15px;
     top: 15px;
   }
-  .intro-text-left h3 {
-    font-size: 16px;
-  }
+
   .intro-text-right {
     right: 15px;
   }
@@ -84,18 +76,7 @@
   }
 }
 
-@media (max-width: 600px) {
-  .intro-text-left {
-    display: none;
-  }
-  .intro-text-right {
-    display: none;
-  }
-  .intro-text-center {
-    font-size: 24px;
-    display: block;
-  }
-}
+
 
 @media (max-width: 480px) {
   .home-main {
