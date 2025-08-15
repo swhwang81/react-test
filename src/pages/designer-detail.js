@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import './designer-detail.css';
 
 // 디자이너 이미지 import
@@ -105,12 +105,24 @@ function DesignerDetail() {
   
   if (!designer) {
     return (
-      <div className="designer-detail-page">
-        <div className="error-message">
-          <h2>디자이너를 찾을 수 없습니다</h2>
-          <button onClick={() => navigate('/designer')}>디자이너 목록으로 돌아가기</button>
+      <>
+        <nav>
+          <div className="nav-left">
+            <Link to="/" className="nav-item">UNFOLD THE FLOW</Link>
+          </div>
+          <div className="nav-right">
+            <Link to="/about">ABOUT</Link>
+            <Link to="/project">PROJECT</Link>
+            <Link to="/designer" className="active">DESIGNER</Link>
+          </div>
+        </nav>
+        <div className="designer-detail-page">
+          <div className="error-message">
+            <h2>디자이너를 찾을 수 없습니다</h2>
+            <button onClick={() => navigate('/designer')}>디자이너 목록으로 돌아가기</button>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
@@ -119,49 +131,61 @@ function DesignerDetail() {
   };
 
   return (
-    <div className="designer-detail-page">
-      <div className="designer-detail-header">
-        <h1>{designer.name}</h1>
-        <p className="english-name">{designer.englishName}</p>
-        <p className="email">{designer.email}</p>
-      </div>
-      
-      <div className="designer-introduction">
-        <div className="intro-korean">
-          <p>창의적이고 혁신적인 디자인 솔루션을 통해 사용자에게 의미 있는 경험을 제공합니다. 각 프로젝트는 사용자의 니즈를 깊이 이해하고, 직관적이고 아름다운 인터페이스로 구현하여 만족스러운 결과물을 만들어냅니다.</p>
+    <>
+      <nav>
+        <div className="nav-left">
+          <Link to="/" className="nav-item">UNFOLD THE FLOW</Link>
         </div>
-        <div className="intro-english">
-          <p>We provide meaningful experiences to users through creative and innovative design solutions. Each project deeply understands user needs and implements intuitive and beautiful interfaces to create satisfying results.</p>
+        <div className="nav-right">
+          <Link to="/about">ABOUT</Link>
+          <Link to="/project">PROJECT</Link>
+          <Link to="/designer" className="active">DESIGNER</Link>
         </div>
-      </div>
-      
-      <div className="designer-works">
-        <h3>작품 목록</h3>
-        <div className="works-grid">
-          {designer.works.slice(0, 2).map((workId) => (
-            <div 
-              key={workId} 
-              className="work-thumbnail"
-              onClick={() => handleWorkClick(workId)}
-            >
-              <img 
-                src={workImages[workId]} 
-                alt={`작품 ${workId}`}
-              />
-              <div className="work-overlay">
-                <span>작품 {workId}</span>
+      </nav>
+      <div className="designer-detail-page">
+        <div className="designer-detail-header">
+          <h1>{designer.name}</h1>
+          <p className="english-name">{designer.englishName}</p>
+          <p className="email">{designer.email}</p>
+        </div>
+        
+        <div className="designer-introduction">
+          <div className="intro-korean">
+            <p>창의적이고 혁신적인 디자인 솔루션을 통해 사용자에게 의미 있는 경험을 제공합니다. 각 프로젝트는 사용자의 니즈를 깊이 이해하고, 직관적이고 아름다운 인터페이스로 구현하여 만족스러운 결과물을 만들어냅니다.</p>
+          </div>
+          <div className="intro-english">
+            <p>We provide meaningful experiences to users through creative and innovative design solutions. Each project deeply understands user needs and implements intuitive and beautiful interfaces to create satisfying results.</p>
+          </div>
+        </div>
+        
+        <div className="designer-works">
+          <h3>작품 목록</h3>
+          <div className="works-grid">
+            {designer.works.slice(0, 2).map((workId) => (
+              <div 
+                key={workId} 
+                className="work-thumbnail"
+                onClick={() => handleWorkClick(workId)}
+              >
+                <img 
+                  src={workImages[workId]} 
+                  alt={`작품 ${workId}`}
+                />
+                <div className="work-overlay">
+                  <span>작품 {workId}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <button 
+            className="back-btn"
+            onClick={() => navigate('/designer')}
+          >
+            디자이너 목록
+          </button>
         </div>
-        <button 
-          className="back-btn"
-          onClick={() => navigate('/designer')}
-        >
-          디자이너 목록
-        </button>
       </div>
-    </div>
+    </>
   );
 }
 

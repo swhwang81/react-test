@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './degree-project.css';
 
 // Import images from the 16 folders
@@ -29,53 +29,65 @@ function DegreeProject() {
   };
 
   return (
-    <main className="degree-project-main">
-      <div className="degree-project-navigation">
-        <button
-          className="degree-project-nav-btn"
-          onClick={() => navigate('/project')}
-        >
-          <span className="degree-project-nav-korean">디지털콘텐츠스튜디오</span>
-          <span className="degree-project-nav-english">Digital Contents Studio</span>
-        </button>
-        <button className="degree-project-nav-btn active">
-          <span className="degree-project-nav-korean">DC 졸업연구</span>
-          <span className="degree-project-nav-english">Degree Project in DC Design</span>
-        </button>
-      </div>
-      <article className="degree-project-article">
-        <h1 className="degree-project-title">DC 졸업연구</h1>
-        <h2 className="degree-project-title-en">Degree Project in DC Design</h2>
-        <div className="degree-project-description">
-          <p>DC 졸업연구는 디지털콘텐츠 전공 학생들의 4년간의 학습 성과를 보여주는 졸업 작품 전시회입니다. 각 학생은 자신만의 독창적인 아이디어와 기술을 바탕으로 완성도 높은 졸업 작품을 제작하여 전시합니다.</p>
-          <p>The DC Degree Project is a graduation exhibition showcasing the four-year learning achievements of Digital Contents major students. Each student creates and exhibits high-quality graduation works based on their unique ideas and technical skills.</p>
+    <>
+      <nav>
+        <div className="nav-left">
+          <Link to="/" className="nav-item">UNFOLD THE FLOW</Link>
         </div>
-        <div className="degree-project-grid">
-          {images.map((image) => (
-            <div
-              key={image.id}
-              className="degree-project-item"
-              onClick={() => handleImageClick(image)}
-            >
-              <div className="degree-project-image-container">
-                <img
-                  src={image.src}
-                  alt={image.title}
-                  className="degree-project-image"
-                />
+        <div className="nav-right">
+          <Link to="/about">ABOUT</Link>
+          <Link to="/project" className="active">PROJECT</Link>
+          <Link to="/designer">DESIGNER</Link>
+        </div>
+      </nav>
+      <main className="degree-project-main">
+        <div className="degree-project-navigation">
+          <button
+            className="degree-project-nav-btn"
+            onClick={() => navigate('/project')}
+          >
+            <span className="degree-project-nav-korean">디지털콘텐츠스튜디오</span>
+            <span className="degree-project-nav-english">Digital Contents Studio</span>
+          </button>
+          <button className="degree-project-nav-btn active">
+            <span className="degree-project-nav-korean">DC 졸업연구</span>
+            <span className="degree-project-nav-english">Degree Project in DC Design</span>
+          </button>
+        </div>
+        <article className="degree-project-article">
+          <h1 className="degree-project-title">DC 졸업연구</h1>
+          <h2 className="degree-project-title-en">Degree Project in DC Design</h2>
+          <div className="degree-project-description">
+            <p>DC 졸업연구는 디지털콘텐츠 전공 학생들의 4년간의 학습 성과를 보여주는 졸업 작품 전시회입니다. 각 학생은 자신만의 독창적인 아이디어와 기술을 바탕으로 완성도 높은 졸업 작품을 제작하여 전시합니다.</p>
+            <p>The DC Degree Project is a graduation exhibition showcasing the four-year learning achievements of Digital Contents major students. Each student creates and exhibits high-quality graduation works based on their unique ideas and technical skills.</p>
+          </div>
+          <div className="degree-project-grid">
+            {images.map((image) => (
+              <div
+                key={image.id}
+                className="degree-project-item"
+                onClick={() => handleImageClick(image)}
+              >
+                <div className="degree-project-image-container">
+                  <img
+                    src={image.src}
+                    alt={image.title}
+                    className="degree-project-image"
+                  />
+                </div>
+                <h3 className="degree-project-item-title">
+                  {image.title}
+                </h3>
+                <p className="degree-project-item-description">
+                  {image.description}
+                </p>
               </div>
-              <h3 className="degree-project-item-title">
-                {image.title}
-              </h3>
-              <p className="degree-project-item-description">
-                {image.description}
-              </p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-      </article>
-    </main>
+        </article>
+      </main>
+    </>
   );
 }
 

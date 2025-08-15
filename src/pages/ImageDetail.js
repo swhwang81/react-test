@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import './imagedetail.css';
 
 // Import all images from each folder
@@ -157,17 +157,28 @@ function ImageDetail() {
   const backToPage = getBackToPage();
 
   return (
-    <main className="imagedetail-main">
-      <div className="imagedetail-back-button-container">
-        <button 
-          onClick={() => navigate(backToPage)}
-          className="imagedetail-back-button project"
-        >
-          ← Back to {folderId <= 10 ? 'Project' : 'Degree Project'}
-        </button>
-      </div>
+    <>
+      <nav>
+        <div className="nav-left">
+          <Link to="/" className="nav-item">UNFOLD THE FLOW</Link>
+        </div>
+        <div className="nav-right">
+          <Link to="/about">ABOUT</Link>
+          <Link to="/project" className="active">PROJECT</Link>
+          <Link to="/designer">DESIGNER</Link>
+        </div>
+      </nav>
+      <main className="imagedetail-main">
+        <div className="imagedetail-back-button-container">
+          <button 
+            onClick={() => navigate(backToPage)}
+            className="imagedetail-back-button project"
+          >
+            ← Back to {folderId <= 10 ? 'Project' : 'Degree Project'}
+          </button>
+        </div>
 
-      <div className="imagedetail-content">
+        <div className="imagedetail-content">
         <h1 className="imagedetail-title">
           Folder {folderId} Images
         </h1>
@@ -229,6 +240,7 @@ function ImageDetail() {
         </div>
       </div>
     </main>
+    </>
   );
 }
 
